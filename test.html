@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        /* Стили контейнера */
+        .custom-select {
+          position: relative;
+          display: inline-block;
+          width: 100%;
+          max-width: 400px;
+        }
+      
+        /* Стили самого select */
+        .custom-select select {
+          appearance: none; /* Убирает стандартные стили браузера */
+          -webkit-appearance: none; /* Для Safari */
+          -moz-appearance: none; /* Для Firefox */
+          background: #f9f9f9;
+          border: 1px solid #ccc;
+          border-radius: 8px;
+          padding: 10px 15px;
+          font-size: 16px;
+          color: #333;
+          width: 100%;
+          cursor: pointer;
+          outline: none;
+          transition: border-color 0.3s ease;
+        }
+      
+        .custom-select select:hover {
+          border-color: #007bff;
+        }
+      
+        .custom-select select:focus {
+          border-color: #0056b3;
+          box-shadow: 0 0 4px rgba(0, 91, 187, 0.5);
+        }
+      
+        /* Добавление иконки стрелки */
+        .custom-select::after {
+          content: '▼';
+          position: absolute;
+          top: 50%;
+          right: 15px;
+          transform: translateY(-50%);
+          pointer-events: none;
+          color: #666;
+          font-size: 12px;
+        }
+      </style>
+      
+      <div class="custom-select">
+        <select id="collateral" name="collateral" required>
+          <option value="">Тип залога</option>
+          <option value="Квартира">Квартира</option>
+          <option value="Комната">Комната</option>
+          <option value="Дом">Дом</option>
+          <option value="Земельный участок">Земельный участок</option>
+          <option value="Дача">Дача</option>
+          <option value="Гараж">Гараж</option>
+          <option value="Коммерческая недвижимость">Коммерческая недвижимость</option>
+          <option value="Автомобиль">Автомобиль</option>
+          <option value="Другое">Другое</option>
+        </select>
+      </div>
+</body>
+</html>

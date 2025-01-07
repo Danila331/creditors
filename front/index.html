@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="index.css">
+    <title>ПростоЗайм</title>
+</head>
+<body>
+    <div class="header__background">
+        <header class="header">
+            <nav class="header__navigation">
+                <ul>
+                    <li><a href="/" class="header__logo"><span style="color:#6B9EDD;">Просто</span>Займ</a></li>
+                </ul>
+                <ul>
+                    <button class="navigation__choose">Выберите город</button>
+                    <li>
+                        <a href="tel:+79774022203" class="header__tel">+ 7-977-402-22-03</a>
+                        <p class="navigation__text">Ежедневно с 9:00 до 21:00</p>
+                    </li>
+                    <li><a href="#" class="navigation__submit">Заявка</a></li>
+                </ul>
+            </nav>
+            <div class="header__block">
+                <p class="header__text1">
+                    Сервис подбора залогового финансирования №1 в России</p>
+                <p class="header__text2">
+                    С нашей помощью уже получили займ под залог более 10000 заемщиков по РФ
+                </p>
+                <div><a href="#" class="header__block-button">Оставить заявку</a></div>
+            </div>
+        </header>
+    </div>
+    <div class="content">
+            <section class="section1">
+                <div class="section1__card">
+                    <div class="section1__image1"></div>
+                    <div class="section1__card-text">
+                        <h2 class="section1__title">Бесплатно</h2>
+                        <p class="section1__text">не платите ни копейки -<br>наши услуги бесплатны<br>для заемщиков</p>
+                    </div>
+                </div>
+                <div class="section1__card">
+                    <div class="section1__image2"></div>
+                    <div class="section1__card-text">
+                        <h2 class="section1__title">Гарантированно</h2>
+                        <p class="section1__text">высокая вероятность<br>одобрения займа от<br>наших партнеров-<br>кредиторов</p>
+                    </div>
+                </div>
+                <div class="section1__card">
+                    <div class="section1__image3"></div>
+                    <div class="section1__card-text">
+                        <h2 class="section1__title">Законно</h2>
+                        <p class="section1__text">наши партнеры - это<br>лидеры рынка<br>залогового<br>кредитования</p>
+                    </div>
+                </div>
+                <div class="section1__card">
+                    <div class="section1__image4"></div>
+                    <div class="section1__card-text">
+                        <h2 class="section1__title">Быстро</h2>
+                        <p class="section1__text">оставьте одну заявку и<br>получите самые<br>выгодные предложения</p>
+                    </div>
+                </div>
+            </section>
+            <section class="section2">
+                <h2 class="section__header">Заявка на помощь в получении займа под залог</h2>
+                <p class="section__text">Заполните и отправьте форму, и мы свяжемся с вами в течение 5 минут.</p>
+                <div class="form__background">
+                    <form action="" class="section2__form">
+                        <input placeholder="ФИО" type="text" id="fullname" name="fullname" required>
+                        <input placeholder="Телефон" type="tel" id="phone" name="phone" pattern="^\+?[0-9\s\-]+$" required>
+                        <input placeholder="Сумма займа" type="number" id="amount" name="amount" min="0" step="0.01" required>
+                        <select id="collateral" name="collateral" required>
+                            <option value="">Тип залога</option>
+                            <option value="Квартира">Квартира</option>
+                            <option value="Комната">Комната</option>
+                            <option value="Дом">Дом</option>
+                            <option value="Земельный участок">Земельный участок</option>
+                            <option value="Дача">Дача</option>
+                            <option value="Гараж">Гараж</option>
+                            <option value="Коммерческая недвижимость">Коммерческая недвижимость</option>
+                            <option value="Автомобиль">Автомобиль</option>
+                            <option value="Другое">Другое</option>
+                        </select>
+                        <button type="submit" class="section2__submit">Отправить</button>
+                    </form>
+                    <p class="form__text">Оставляя заявку, вы соглашаетесь с <a href="#" class="form__link">политикой конфиденциальности</a></p>
+                </div>
+            </section>
+            <section class="section3">
+                <div class="section3__card">
+                    <img src="./img/icons/money.png" alt="" class="section3__image">
+                    <div class="section3__card-text">
+                        <h2 class="section3__title">Услуги нашего сервиса бесплатны.</h2>
+                        <p class="section3__text">Оставляя заявку на этом сайте, вы получите доступ к надежным кредиторам, не заплатив ни копейки. Все комиссионные расходы берут на себя<br>кредиторы.</p>
+                    </div>
+                </div>
+                <div class="section3__card">
+                    <img src="./img/icons/like.png" alt="" class="section3__image">
+                    <div class="section3__card-text">
+                        <h2 class="section3__title">Высокая одобряемость - наша мотивация.</h2>
+                        <p class="section3__text">Мы лично заинтересованы в положительном результате, поэтому в числе наших партнеров только кредиторы с высокой лояльностью к заемщикам и<br>конкурентными, выгодными условиями.</p>
+                    </div>
+                </div>
+                <div class="section3__card">
+                    <img src="./img/icons/law.png" alt="" class="section3__image">
+                    <div class="section3__card-text">
+                        <h2 class="section3__title">Только надежные компании.</h2>
+                        <p class="section3__text">Мы тщательно выбираем партнеров, поэтому они являются лидерами рынка залогового кредитования в своих регионах, с длительной историей<br>работы, максимально зарекомендовавшие себя с положительной стороны.</p>
+                    </div>
+                </div>
+                <div class="section3__card">
+                    <img src="./img/icons/sand-clock.png" alt="" class="section3__image">
+                    <div class="section3__card-text">
+                        <h2 class="section3__title">Вы сэкономите уйму времени.</h2>
+                        <p class="section3__text">Мы сделали всю работу по поиску компании за вас. Вам достаточно оставить одну заявку на нашем сайте, и с вами свяжутся представители сразу<br>нескольких компаний со своими предложениями. Вам достаточно будет выбрать наиболее подходящие условия кредитования.</p>
+                    </div>
+                </div>
+                <div class="section3__card">
+                    <img src="./img/icons/smile.png" alt="" class="section3__image">
+                    <div class="section3__card-text">
+                        <h2 class="section3__title">Вы уже на нашем сайте.</h2>
+                        <p class="section3__text">Осталось только заполнить небольшую форму и совсем скоро с вами свяжутся представители компаний.</p>
+                    </div>
+                </div>
+            </section>
+            <section class="section4">
+                <h2 class="section__header">Отзывы наших клиентов</h2>
+                <p class="section__text">Кликните на фото, чтобы посмотреть видео-отзыв.</p>
+                <div class="section4__cards">
+                    <div class="section4__card">
+                        <div class="round"></div>
+                        <p class="section4__card-text">
+                            Марат
+                        </p>
+                    </div>
+                    <div class="section4__card">
+                        <div class="round"></div>
+                        <p class="section4__card-text">
+                            Марат
+                        </p>
+                    </div>
+                    <div class="section4__card">
+                        <div class="round"></div>
+                        <p class="section4__card-text">
+                            Марат
+                        </p>
+                    </div>
+                    <div class="section4__card">
+                        <div class="round"></div>
+                        <p class="section4__card-text">
+                            Марат
+                        </p>
+                    </div>
+                    <div class="section4__card">
+                        <div class="round"></div>
+                        <p class="section4__card-text">
+                            Марат
+                        </p>
+                    </div>
+                    <div class="section4__card">
+                        <div class="round"></div>
+                        <p class="section4__card-text">
+                            Марат
+                        </p>
+                    </div>
+                    <div class="section4__card">
+                        <div class="round"></div>
+                        <p class="section4__card-text">
+                            Марат
+                        </p>
+                    </div>
+                    <div class="section4__card">
+                        <div class="round"></div>
+                        <p class="section4__card-text">
+                            Марат
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <section class="section5">
+                <a href="" class="section5__home"></a>
+                <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A7d1d6baaa15c5942ba03189d050cc2ffec55dc902ce0cfaa621347eaafb56b5d&amp;source=constructor" width="100%" height="400" frameborder="0"></iframe>
+            </section>
+    </div>
+        <footer class="footer">
+           <nav class="footer__navigation">
+                <ul>
+                    <li class="footer__link"><a href="">О проекте</a></li>
+                    <li class="footer__link"><a href="">Контакты</a></li>
+                    <li class="footer__link"><a href="">Партнерская программа</a></li>
+                </ul>
+           </nav>
+           <div class="footer__block">
+                <div class="footer__socials">
+                    <a href="" class="footer__social"><img src="./img/icons/vk.png" alt="" class="footer__icon"></a>
+                    <a href="" class="footer__social"><img src="./img/icons/vk.png" alt="" class="footer__icon"></a>
+                    <a href="" class="footer__social"><img src="./img/icons/vk.png" alt="" class="footer__icon"></a>
+                    <a href="" class="footer__social"><img src="./img/icons/vk.png" alt="" class="footer__icon"></a>
+                    <a href="" class="footer__social"><img src="./img/icons/vk.png" alt="" class="footer__icon"></a>
+                </div>
+                <p class="footer__address">ПростоЗайм, г. Москва, ул. Автозаводская, д. 13/1, тел.: 8-499-403-36-67</p>
+           </div>
+           <p class="footer__text">
+            Информация на сайте не является публичной офертой и носит информационно-справочный характер.<br>
+            Содействие в подборе финансовых и иных услуг и организаций оказывает ООО «Продвижение» ОГРН 1171690007070<br>
+            Услуги по выдаче займов и кредитов оказываются организациями, имеющими на это соответствующие лицензии, разрешения, аккредитации, либо включенными в соответствующие реестры или являющимися членами соответствующих СРО: ПАО «Совкомбанк», лицензия №936 от 05.12.2014 ОГРН 1144400000425, ПАО Банк ЗЕНИТ, лицензия №3255 от 16.12.2014 ОГРН 1027739056927, ООО МФК «КарМани» ОГРН 1107746915781 регистрационный номер в государственном реестре МФО 2110177000471, КПК «Народный капитал» ОГРН 1105258002002, ООО «МКК «Сибиряк» ОГРН 1175476030993 регистрационный номер в государственном реестре МФО 1703550008233, ООО МФК Быстроденьги ОГРН 1087325005899 регистрационный номер в государственном реестре МФО 2110573000002, ООО МФК «ЦФР ВИ» ОГРН 1175476112646 регистрационный номер в государственном реестре МФО 1803550008909<br>
+            <br>
+            Все права защищены. © «Честные Кредиторы» 2016-2024.<br>
+            <a href="" class="footer__link">Политика конфиденциальности</a>
+           </p>
+        </footer>
+</body>
+</html>
