@@ -3,70 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Loan Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .slider-container {
+            margin-bottom: 20px;
+        }
+        .slider-label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .output {
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
-    <style>
-        /* Стили контейнера */
-        .custom-select {
-          position: relative;
-          display: inline-block;
-          width: 100%;
-          max-width: 400px;
-        }
-      
-        /* Стили самого select */
-        .custom-select select {
-          appearance: none; /* Убирает стандартные стили браузера */
-          -webkit-appearance: none; /* Для Safari */
-          -moz-appearance: none; /* Для Firefox */
-          background: #f9f9f9;
-          border: 1px solid #ccc;
-          border-radius: 8px;
-          padding: 10px 15px;
-          font-size: 16px;
-          color: #333;
-          width: 100%;
-          cursor: pointer;
-          outline: none;
-          transition: border-color 0.3s ease;
-        }
-      
-        .custom-select select:hover {
-          border-color: #007bff;
-        }
-      
-        .custom-select select:focus {
-          border-color: #0056b3;
-          box-shadow: 0 0 4px rgba(0, 91, 187, 0.5);
-        }
-      
-        /* Добавление иконки стрелки */
-        .custom-select::after {
-          content: '▼';
-          position: absolute;
-          top: 50%;
-          right: 15px;
-          transform: translateY(-50%);
-          pointer-events: none;
-          color: #666;
-          font-size: 12px;
-        }
-      </style>
-      
-      <div class="custom-select">
-        <select id="collateral" name="collateral" required>
-          <option value="">Тип залога</option>
-          <option value="Квартира">Квартира</option>
-          <option value="Комната">Комната</option>
-          <option value="Дом">Дом</option>
-          <option value="Земельный участок">Земельный участок</option>
-          <option value="Дача">Дача</option>
-          <option value="Гараж">Гараж</option>
-          <option value="Коммерческая недвижимость">Коммерческая недвижимость</option>
-          <option value="Автомобиль">Автомобиль</option>
-          <option value="Другое">Другое</option>
+    <h1>Loan Calculator</h1>
+
+    <div class="slider-container">
+        <label class="slider-label" for="loan-amount">Loan Amount: <span id="amount-output" class="output">50000</span></label>
+        <input type="range" id="loan-amount" min="1000" max="1000000" step="1000" value="50000">
+    </div>
+
+    <div class="slider-container">
+        <label class="slider-label" for="loan-term">Loan Term (months): <span id="term-output" class="output">12</span></label>
+        <input type="range" id="loan-term" min="1" max="360" step="1" value="12">
+    </div>
+
+    <div class="slider-container">
+        <label class="slider-label" for="interest-rate">Interest Rate (%): <span id="rate-output" class="output">5</span></label>
+        <input type="range" id="interest-rate" min="1" max="20" step="0.1" value="5">
+    </div>
+
+    <div class="slider-container">
+        <label class="slider-label" for="payment-type">Payment Type:</label>
+        <select id="payment-type">
+            <option value="annuity">Annuity</option>
+            <option value="differential">Differential</option>
         </select>
-      </div>
+    </div>
+
+    <h2>Result</h2>
+    <p id="result"></p>
+
+    <script>
+        const loanAmount = document.getElementById('loan-amount');
+        const loanTerm = document.getElementById('loan-term');
+        const interestRate = document.getElementById('interest-rate');
+        const paymentType = document.getElementById('payment-type');
+        const amountOutput = document.getElementById('amount-output');
+        const termOutput = document.getElementById('term-output');
+        const rateOutput = document.getElementById('rate-output');
+        const result = document.getElementById('result');
+
+        function updateOutput() {
+            amountOutput.textContent = loanAmount.value;
+            termOutput.textContent = loanTerm.value;
+            rateOutput.textContent = parseFloat(interestRate.value).toFixed(1);
+            calculateLoan();
+        }
+
+        function calculateLoan() {
+            const P = parseFloat(loanAmount.value);
+            const n = parseInt(loanTerm.value, 10);
+            const r = parseFloat(interestRate.value) / 100 / 12;
+            const type = paymentType.value;
+
+            let monthly;
+            if (type === 'annuity') {
+                monthly = (P * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+            } else {
+                monthly = (P / n) + (P - (P / n) * (n - 1)) * r;
+            }
+
+            result.textContent = `Estimated Monthly Payment: ${monthly.toFixed(2)} RUB`;
+        }
+
+        loanAmount.addEventListener('input', updateOutput);
+        loanTerm.addEventListener('input', updateOutput);
+        interestRate.addEventListener('input', updateOutput);
+        paymentType.addEventListener('change', calculateLoan);
+
+        updateOutput();
+    </script>
 </body>
 </html>
